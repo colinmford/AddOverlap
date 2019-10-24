@@ -1,8 +1,13 @@
 from AppKit import NSImage
 try:
-    from ufoLib.pointPen import AbstractPointPen
+    from fontTools.ufoLib.pointPen import AbstractPointPen
 except:
-    from robofab.pens.pointPen import AbstractPointPen
+    try:
+        from ufoLib.pointPen import AbstractPointPen
+    except:
+        from robofab.pens.pointPen import AbstractPointPen
+
+
 from lib.UI.toolbarGlyphTools import ToolbarGlyphTools
 from mojo.events import addObserver
 import math
